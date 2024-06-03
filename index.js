@@ -4,7 +4,7 @@ const startButton = document.querySelector('#start_game_button')
 const dealButton = document.querySelector('#deal_button')
 const playerCardOne = document.querySelector('.pcard_one')
 const playerCardTwo =  document.querySelector('.pcard_two')
-const playerTotal = document.querySelector('.total_score')
+const playerTotal = document.querySelector('#total_score')
 const dealerCardOne = document.querySelector('.dcard_one')
 const dealerCardTwo = document.querySelector('.dcard_two')
 const hitMeButton = document.querySelector('#hit_button')
@@ -57,7 +57,7 @@ function dealPlayer() {
     }
     playerCardOne.innerHTML = `${playerHand[0]}`
     playerCardTwo.innerHTML = `${playerHand[1]}`
-    playerTotalScore(playerHand[0],playerHand[1]) 
+    playerTotalScore(playerHand) 
 };
 
 function dealDealer() {
@@ -76,9 +76,9 @@ function hitMe(e) {
     // this is also re-dealing, need to fix that. 
 }
 
-function playerTotalScore(a, e) {
+function playerTotalScore(a, e) { 
     console.log("Your Total Score: " + `${a+e}`)
-    playerTotalScore.innerHTML = `Your total score is ${a+e}`
+    playerTotalScore.innerHTML = `${a+e}` // this isn't replacing the HTML, need to determine why, it will also eventually need to return multiple args
 };
 
 function houseTotalScore(a,e) {
