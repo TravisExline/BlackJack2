@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- need to get node up and running so I can spin this up in local env, inline til then<link rel="stylesheet" type="css" href="./style.css"> -->   
+        <title>Blackjack Resurgance</title>
+    </head>
+    <body>
+        <div>
+            <!--This will need to be hidden after clicking-->
+            <button id="start_game_button">Start Game</button>
+        </div>
+        <!-- everything below here will need to be hidden before clicking start game-->
+        <div class="game_table" style="text-align: center;
+        margin-top: 150px;">
+            <div class="dealer_cards">
+                <div class="dcard_one" style="border-style: solid;
+                border-radius: 6px;
+                border-color: black;
+                margin-left: 900px;
+                margin-right: 900px;
+                padding-bottom: 50px;
+                padding-top: 50px;">
+                </div>
+                <div class="dcard_two" style="border-style: solid;
+                border-radius: 6px;
+                border-color: black;
+                margin-left: 900px;
+                margin-right: 900px;
+                padding-bottom: 50px;
+                padding-top: 50px;">
+                </div>
+            </div>
+            <button id="deal_button">Deal Cards</button>
+            <div class="player_cards">
+                <div class="pcard_one" style="border-style: solid;
+                border-radius: 6px;
+                border-color: black;
+                margin-left: 900px;
+                margin-right: 900px;
+                padding-bottom: 50px;
+                padding-top: 50px;">
+                </div>
+                <div class="pcard_two" style="border-style: solid;
+                border-radius: 6px;
+                border-color: black;
+                margin-left: 900px;
+                margin-right: 900px;
+                padding-bottom: 50px;
+                padding-top: 50px;">
+                </div>
+            </div>
+            <div>
+                <button id="hit_button">Hit Me!</button>
+                <button id="stay_button">Stay</button>
+            </div>
+        </div>
+        <script type="text/javascript" language="javascript" src="./index.js"></script>
+    </body>
+</html>

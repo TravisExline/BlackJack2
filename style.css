@@ -1,0 +1,41 @@
+#start-game-button {
+    border-radius: 10px;
+    font-size: 35px;
+    background-color: rgb(220, 231, 67);
+}
+
+#deal-button {
+    border-radius: 7px;
+    font-size: 25px;
+    background-color: rgb(103, 106, 255);
+}
+
+#hit-button {
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: rgb(192, 35, 35);
+}
+
+#stay-btutton {
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: rgb(69, 35, 192);
+}
+
+.card-one {
+    border-style: solid;
+    border-radius: 6px;
+    margin-left: 900px;
+    margin-right: 900px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.card-two {
+    border-style: solid;
+    border-radius: 6px;
+    margin-left: 900px;
+    margin-right: 900px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
