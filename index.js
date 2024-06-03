@@ -19,10 +19,14 @@ function dealAll() {
 function dealPlayer() {
     playerHand=[]
     while(playerHand.length<2) {
+        // choosing a random card from the deck
         playerHand.push(Math.floor(Math.random() * normal_deck.length + 1))
     }
-    console.log('Your cards are: ' + playerHand[0],playerHand[1])
-    playerTotalScore(playerHand[0],playerHand[1]) // eventually this will need to be placed into the pcard_one/pcard_two elements
+    console.log(playerHand)
+    playerCardOne.innerHTML = `${playerHand[0]}`
+    PLayerCardTwo.innerHTML = `${playerHand[1]}` // this is returning a typer error
+    // console.log('Your cards are: ' + playerHand[0],playerHand[1])
+    playerTotalScore(playerHand[0],playerHand[1]) // eventually this will need to be placed into the pcard_one/pcard_two elements, see above innterhtml work
 };
 // deals cards to the dealer
 function dealDealer() {
