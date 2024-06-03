@@ -2,7 +2,10 @@ const normal_deck = [2,3,4,5,6,7,8,9,10, 'J', 'Q', 'K', 'A']
 
 const dealButton = document.querySelector('#deal_button')
 const playerCardOne = document.querySelector('.pcard_one')
-const PLayerCardTwo =  document.querySelector('pcard_two')
+const playerCardTwo =  document.querySelector('.pcard_two')
+const playerTotal = document.querySelector('.total_score')
+const dealerCardOne = document.querySelector('.dcard_one')
+const dealerCardTwo = document.querySelector('.dcard_two')
 var playerhand= []
 
 // event listener to trigger dealAll function on button press. 
@@ -22,11 +25,9 @@ function dealPlayer() {
         // choosing a random card from the deck
         playerHand.push(Math.floor(Math.random() * normal_deck.length + 1))
     }
-    console.log(playerHand)
     playerCardOne.innerHTML = `${playerHand[0]}`
-    PLayerCardTwo.innerHTML = `${playerHand[1]}` // this is returning a typer error
-    // console.log('Your cards are: ' + playerHand[0],playerHand[1])
-    playerTotalScore(playerHand[0],playerHand[1]) // eventually this will need to be placed into the pcard_one/pcard_two elements, see above innterhtml work
+    playerCardTwo.innerHTML = `${playerHand[1]}`
+    playerTotalScore(playerHand[0],playerHand[1]) 
 };
 // deals cards to the dealer
 function dealDealer() {
@@ -34,14 +35,16 @@ function dealDealer() {
     while(dealerHand.length<2) {
         dealerHand.push(Math.floor(Math.random() * normal_deck.length + 1))
     }
-    console.log('Dealer cards are: ' + dealerHand[0],dealerHand[1])
+    dealerCardOne.innerHTML = `${dealerHand[0]}`
+    dealerCardTwo.innerHTML = `${dealerHand[1]}`
     houseTotalScore(dealerHand[0],dealerHand[1]) // eventually this will need to be placed into the dcard_one/dcard_two elements
 };
 
 function playerTotalScore(a, e) {
-    console.log("Your Total Score: " + a+e) // this isn't working, taking as a string, needs to be int
+    console.log("Your Total Score: " + `${a+e}`) // this isn't working, taking as a string, needs to be int
+    playerTotalScore.innerHTML = `Your total score is ${a+e}`
 }
 
 function houseTotalScore(a,e) {
-    console.log(a+e)
+    console.log("House Total Score: " + `${a+e}`)
 }
