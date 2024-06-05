@@ -22,20 +22,46 @@
     background-color: rgb(69, 35, 192);
 }
 
-.card-one {
+.dcard_one {
     border-style: solid;
     border-radius: 6px;
-    margin-left: 900px;
-    margin-right: 900px;
+    border-color: black;
+    margin-left: 650px;
+    margin-right: 620px;
     padding-bottom: 50px;
     padding-top: 50px;
+    align-content: center;
 }
 
-.card-two {
+.dcard_two {
     border-style: solid;
     border-radius: 6px;
-    margin-left: 900px;
-    margin-right: 900px;
+    border-color: black;
+    margin-left: 650px;
+    margin-right: 620px;
     padding-bottom: 50px;
     padding-top: 50px;
+    align-content: center;
+}
+
+.pcard_one {
+    border-style: solid;
+    border-radius: 6px;
+    border-color: black;
+    margin-left: 650px;
+    margin-right: 620px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    align-content: center;
+}
+
+.pcard_two {
+    border-style: solid;
+    border-radius: 6px;
+    border-color: black;
+    margin-left: 650px;
+    margin-right: 620px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    align-content: center;
 }

@@ -26,8 +26,9 @@ function hideItAll() {
     stayButton.style.display = "none"
 }
 
-document.addEventListener('click', function(e) {
+startButton.addEventListener('click', function(e) {
     dealAll()
+    startButton.style.display="none"
 })
 
 dealButton.addEventListener('click', function(e) {
@@ -67,7 +68,7 @@ function dealDealer() {
     }
     dealerCardOne.innerHTML = `${dealerHand[0]}`
     dealerCardTwo.innerHTML = `${dealerHand[1]}`
-    houseTotalScore(dealerHand[0],dealerHand[1])
+    houseTotalScore(dealerHand[0],dealerHand[1]) // pass in array vs specific values from array, that way playerTotalScore/HouseTotalScore can can take in an array parse 3+ values in the array
 };
 
 function hitMe(e) {
@@ -77,8 +78,8 @@ function hitMe(e) {
 }
 
 function playerTotalScore(a, e) { 
-    console.log("Your Total Score: " + `${a+e}`)
-    playerTotalScore.innerHTML = `${a+e}` // this isn't replacing the HTML, need to determine why, it will also eventually need to return multiple args
+    console.log("Your Total Score: " + `${a+e}`)  // eventually this will need to accept 1 arg, an array, and the parse and add the values in the array
+    playerTotalScore.innerHTML = `${a+e}` // this isn't replacing the HTML, need to determine why, it will also eventually need to accept multiple args for 1+ hits
 };
 
 function houseTotalScore(a,e) {
