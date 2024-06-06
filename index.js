@@ -69,7 +69,7 @@ function dealDealer() {
     }
     dealerCardOne.innerHTML = `${dealerHand[0]}`
     dealerCardTwo.innerHTML = `${dealerHand[1]}`
-    houseTotalScore(dealerHand)
+    // houseTotalScore(dealerHand)
 };
 
 function hitMe(e) {
@@ -82,9 +82,8 @@ function houseHit(e) {
     if (houseSum < 16) {
         e.push(Math.floor(Math.random() * normal_deck.length + 1))
         houseTotalScore(e)
-    }
+    } else { houseTotalScore(e) }
     console.log(e)
-    houseTotalScore(e)
 }
 
 function playerTotalScore(e) {
@@ -124,6 +123,9 @@ function houseTotalScore(e) {
             e[i] = 10
         }
         houseSum = e[i] + houseSum
+    }
+    while (houseSum < 16) {
+        houseHit(e)
     }
     if (houseSum < 21) {
         console.log("House Total Score: " + `${houseSum}`)
