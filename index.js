@@ -11,7 +11,8 @@ const hitMeButton = document.querySelector('#hit_button');
 const stayButton = document.querySelector('#stay_button');
 
 const playerhand = [];
-// const dealerHand = []
+var dealerHand = [];
+var houseSum = 0
 
 document.addEventListener('DOMContentLoaded', hideItAll());
 
@@ -77,6 +78,15 @@ function hitMe(e) {
     playerTotalScore(e)
 };
 
+function houseHit(e) {
+    if (houseSum < 16) {
+        e.push(Math.floor(Math.random() * normal_deck.length + 1))
+        houseTotalScore(e)
+    }
+    console.log(e)
+    houseTotalScore(e)
+}
+
 function playerTotalScore(e) {
     var playerSum = 0
     for (let i = 0; i < e.length; i++) {
@@ -94,23 +104,30 @@ function playerTotalScore(e) {
         hitMeButton.style.display = 'none'
         stayButton.style.display = 'none'
         startButton.style.display = ''
+        if (houseSum < 16) {
+            houseHit(dealerHand)
+        } else { houseTotalScore(dealerHand) }
     } else {
         console.log("Blackjack!")
         playerTotalScore.innerHTML = `Blackjack!`
+        if (houseSum < 16) {
+            houseHit(dealerHand)
+        } else { houseTotalScore(dealerHand) }
     }
 };
 
 
 function houseTotalScore(e) {
-    var houseSum = 0
+    houseSum = 0
     for (let i = 0; i < e.length; i++) {
         if (e[i] > 10) {
             e[i] = 10
         }
         houseSum = e[i] + houseSum
     }
+
     if (houseSum <= 21) {
-        console.log("Your Total Score: " + `${houseSum}`)
+        console.log("House Total Score: " + `${houseSum}`)
         houseTotalScore.innerHTML = `${houseSum}`
     } else if (houseSum > 21) {
         console.log("The House Busted!")
@@ -119,5 +136,4 @@ function houseTotalScore(e) {
         console.log("House Blackjack!")
         houseTotalScore.innerHTML = `House Blackjack!`
     }
-    console.log("House Total Score: " + `${houseSum}`)
 };
