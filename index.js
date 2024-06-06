@@ -1,19 +1,19 @@
-const normal_deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'] // problem: how tf to return face card values. problem 2: need 52 cards
+const normal_deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A']; // problem 2: need 52 cards
 
-const startButton = document.querySelector('#start_game_button')
-const dealButton = document.querySelector('#deal_button')
-const playerCardOne = document.querySelector('.pcard_one')
-const playerCardTwo = document.querySelector('.pcard_two')
-const playerTotal = document.querySelector('#total_score')
-const dealerCardOne = document.querySelector('.dcard_one')
-const dealerCardTwo = document.querySelector('.dcard_two')
-const hitMeButton = document.querySelector('#hit_button')
-const stayButton = document.querySelector('#stay_button')
+const startButton = document.querySelector('#start_game_button');
+const dealButton = document.querySelector('#deal_button');
+const playerCardOne = document.querySelector('.pcard_one');
+const playerCardTwo = document.querySelector('.pcard_two');
+const playerTotal = document.querySelector('#total_score');
+const dealerCardOne = document.querySelector('.dcard_one');
+const dealerCardTwo = document.querySelector('.dcard_two');
+const hitMeButton = document.querySelector('#hit_button');
+const stayButton = document.querySelector('#stay_button');
 
-const playerhand = []
+const playerhand = [];
 // const dealerHand = []
 
-document.addEventListener('DOMContentLoaded', hideItAll())
+document.addEventListener('DOMContentLoaded', hideItAll());
 
 function hideItAll() {
     dealButton.style.display = "none"
@@ -24,20 +24,20 @@ function hideItAll() {
     dealerCardTwo.style.display = "none"
     hitMeButton.style.display = "none"
     stayButton.style.display = "none"
-}
+};
 
 startButton.addEventListener('click', function (e) {
     dealAll()
     startButton.style.display = "none"
-})
+});
 
 dealButton.addEventListener('click', function (e) {
     dealAll()
-})
+});
 
 hitMeButton.addEventListener('click', function (e) {
     hitMe(playerHand)
-})
+});
 
 function dealAll() {
     playerCardOne.style.display = ""
@@ -49,7 +49,7 @@ function dealAll() {
     stayButton.style.display = ""
     dealPlayer()
     dealDealer()
-}
+};
 
 function dealPlayer() {
     playerHand = []
@@ -73,20 +73,31 @@ function dealDealer() {
 
 function hitMe(e) {
     e.push(Math.floor(Math.random() * normal_deck.length + 1))
-    console.log(e);
+    console.log(e)
     playerTotalScore(e)
-}
+};
 
 function playerTotalScore(e) {
-    var sum = 0
+    var playerSum = 0
     for (let i = 0; i < e.length; i++) {
         if (e[i] > 10) {
             e[i] = 10
         }
-        sum = e[i] + sum
+        playerSum = e[i] + playerSum
     }
-    console.log("Your Total Score: " + `${sum}`)
-    playerTotalScore.innerHTML = `${sum}` // doesn't work yet
+    if (playerSum < 21) {
+        console.log("Your Total Score: " + `${playerSum}`)
+        playerTotalScore.innerHTML = `${playerSum}`
+    } else if (playerSum > 21) {
+        console.log("Bust!" + ` ${playerSum}`)
+        playerTotalScore.innerHTML = `Bust!`
+        hitMeButton.style.display = 'none'
+        stayButton.style.display = 'none'
+        startButton.style.display = ''
+    } else {
+        console.log("Blackjack!")
+        playerTotalScore.innerHTML = `Blackjack!`
+    }
 };
 
 
@@ -97,6 +108,16 @@ function houseTotalScore(e) {
             e[i] = 10
         }
         houseSum = e[i] + houseSum
+    }
+    if (houseSum <= 21) {
+        console.log("Your Total Score: " + `${houseSum}`)
+        houseTotalScore.innerHTML = `${houseSum}`
+    } else if (houseSum > 21) {
+        console.log("The House Busted!")
+        houseTotalScore.innerHTML = `The House Busted!`
+    } else {
+        console.log("House Blackjack!")
+        houseTotalScore.innerHTML = `House Blackjack!`
     }
     console.log("House Total Score: " + `${houseSum}`)
 };
