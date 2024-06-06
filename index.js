@@ -1,4 +1,4 @@
-const normal_deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'] // problem: how tf to return face card values
+const normal_deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'] // problem: how tf to return face card values. problem 2: need 52 cards
 
 const startButton = document.querySelector('#start_game_button')
 const dealButton = document.querySelector('#deal_button')
@@ -80,6 +80,9 @@ function hitMe(e) {
 function playerTotalScore(e) {
     var sum = 0
     for (let i = 0; i < e.length; i++) {
+        if (e[i] > 10) {
+            e[i] = 10
+        }
         sum = e[i] + sum
     }
     console.log("Your Total Score: " + `${sum}`)
@@ -90,6 +93,9 @@ function playerTotalScore(e) {
 function houseTotalScore(e) {
     var houseSum = 0
     for (let i = 0; i < e.length; i++) {
+        if (e[i] > 10) {
+            e[i] = 10
+        }
         houseSum = e[i] + houseSum
     }
     console.log("House Total Score: " + `${houseSum}`)
