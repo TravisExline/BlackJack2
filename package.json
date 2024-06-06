@@ -1,0 +1,19 @@
+{
+  "name": "blackjack-resurgance",
+  "version": "1.0.0",
+  "description": "NA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TravisExline/BlackJack2.git"
+  },
+  "author": "TravisExline",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TravisExline/BlackJack2/issues"
+  },
+  "homepage": "https://github.com/TravisExline/BlackJack2#readme"
+}
