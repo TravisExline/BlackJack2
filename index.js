@@ -4,7 +4,7 @@ const startButton = document.querySelector('#start_game_button');
 const dealButton = document.querySelector('#deal_button');
 const playerCardOne = document.querySelector('.pcard_one');
 const playerCardTwo = document.querySelector('.pcard_two');
-const playerTotal = document.querySelector('#total_score');
+const playerTotal = document.querySelector('.total_score');
 const dealerCardOne = document.querySelector('.dcard_one');
 const dealerCardTwo = document.querySelector('.dcard_two');
 const hitMeButton = document.querySelector('#hit_button');
@@ -125,8 +125,7 @@ function houseTotalScore(e) {
         }
         houseSum = e[i] + houseSum
     }
-
-    if (houseSum <= 21) {
+    if (houseSum < 21) {
         console.log("House Total Score: " + `${houseSum}`)
         houseTotalScore.innerHTML = `${houseSum}`
     } else if (houseSum > 21) {

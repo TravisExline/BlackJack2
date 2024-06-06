@@ -1,25 +1,25 @@
-#start-game-button {
+#start_game_button {
     border-radius: 10px;
     font-size: 35px;
     background-color: rgb(220, 231, 67);
 }
 
-#deal-button {
+#deal_button {
     border-radius: 7px;
     font-size: 25px;
     background-color: rgb(103, 106, 255);
 }
 
-#hit-button {
+#hit_button {
     border-radius: 5px;
     font-size: 20px;
     background-color: rgb(192, 35, 35);
 }
 
-#stay-btutton {
+#stay_button {
     border-radius: 5px;
     font-size: 20px;
-    background-color: rgb(69, 35, 192);
+    background-color: rgb(163, 146, 223);
 }
 
 .dcard_one {
@@ -64,4 +64,14 @@
     padding-bottom: 50px;
     padding-top: 50px;
     align-content: center;
+}
+
+.total_score {
+    border-style: solid;
+    border-radius: 2px;
+    border-color: rgb(84, 5, 212);
+    margin-left: 650px;
+    margin-right: 620px;
+    padding-bottom: 50px;
+    padding-top: 50px;
 }

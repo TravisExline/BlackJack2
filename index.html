@@ -3,59 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
     <title>Blackjack Resurgance</title>
 </head>
 
 <body>
     <div>
         <!--This will need to be hidden after clicking-->
-        <button id="start_game_button" style="border-radius: 10px;
-            font-size: 35px;
-            background-color: rgb(220, 231, 67);">Start Game</button>
+        <button id="start_game_button">Start Game</button>
     </div>
     <!-- everything below here will need to be hidden before clicking start game-->
     <div class="game_table" style="text-align: center;
         margin-top: 150px;">
         <div class="dealer_cards">
-            <div class="dcard_one" style="border-style: solid;
-                border-radius: 6px;
-                border-color: black;
-                margin-left: 650px;
-                margin-right: 620px;
-                padding-bottom: 50px;
-                padding-top: 50px;">
+            <div class="dcard_one">
             </div>
-            <div class="dcard_two" style="border-style: solid;
-                border-radius: 6px;
-                border-color: black;
-                margin-left: 650px;
-                margin-right: 620px;
-                padding-bottom: 50px;
-                padding-top: 50px;">
+            <div class="dcard_two">
             </div>
         </div>
         <button id="deal_button">Deal Cards</button>
         <div class="player_cards">
-            <div class="pcard_one" style="border-style: solid;
-                border-radius: 6px;
-                border-color: black;
-                margin-left: 650px;
-                margin-right: 620px;
-                padding-bottom: 50px;
-                padding-top: 50px;">
+            <div class="pcard_one">
             </div>
-            <div class="pcard_two" style="border-style: solid;
-                border-radius: 6px;
-                border-color: black;
-                margin-left: 650px;
-                margin-right: 620px;
-                padding-bottom: 50px;
-                padding-top: 50px;">
+            <div class="pcard_two">
             </div>
         </div>
         <div class="total_score">
-            <p id="total_score"></p>
         </div>
         <div>
             <button id="hit_button">Hit Me!</button>
